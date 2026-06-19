@@ -1,0 +1,28 @@
+services:
+
+  db:
+    image: postgres:18
+    container_name: wifi-db
+    restart: always
+    environment:
+      POSTGRES_DB: wifi_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: sambatra
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: ./backend
+    container_name: wifi-backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    container_name: wifi-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backendc
