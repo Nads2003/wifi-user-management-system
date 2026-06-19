@@ -1,9 +1,9 @@
 # Backend
-backend/target/
+back-end/target/
 
 # Frontend
-frontend/node_modules/
-frontend/dist/
+front-end/node_modules/
+front-end/dist/
 
 # IDE
 .idea/
